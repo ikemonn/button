@@ -6,11 +6,29 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <div id="tweet_button" onclick="tweetImageAppear()">
-            <a href="https://twitter.com/intent/tweet?text=+test.">
-            </a>
-        </div>
-    <p>hello</p>
+    <canvas id="my_canvas" width="200" height="200" style="background-color: green">
+    <script>
+    window.onload = function()
+    {
+        twitterImageAppear();
+    }
+
+    function twitterImageAppear()
+    {
+        var myCanvas = document.getElementById("my_canvas");
+        var context = myCanvas.getContext("2d");
+        var twitterImage = new Image();
+        twitterImage.src = "img/twitter.png";
+        twitterImage.onload = function()
+        {
+            context.drawImage(twitterImage, 0, 0);
+        }
+    }
+
+
+
+
+    </script>>
 
 </body>
 </html>
