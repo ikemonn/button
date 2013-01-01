@@ -15,6 +15,7 @@
 
     function twitterImageAppear()
     {
+        //twitterのロゴ画像表示
         var myCanvas = document.getElementById("my_canvas");
         var context = myCanvas.getContext("2d");
         var twitterImage = new Image();
@@ -23,8 +24,28 @@
         {
             context.drawImage(twitterImage, 0, 0);
         }
+        //クリックでリンク先に飛ぶ
+        myCanvas.addEventListener("mousedown", clickJumpLink, false);
     }
 
+    function clickJumpLink(e)
+    {
+        //Canvas上のオブジェクトを消す
+        var myCanvas = document.getElementById("my_canvas");
+        var context = myCanvas.getContext("2d");
+        context.clearRect(0, 0, 200, 200);
+        //Tweetという文字を表示
+        context.font = "italic bold 2em Times New Roman";
+        context.fillStyle = "white";
+        context.fillText("Tweet!", 10, 100);
+
+        //setTimeoutを使って３秒後にイベントおこす
+        //文字を表示させる関数わける
+        setTimeout(func, delay[, lang])
+        location.href = "http://google.com";
+
+
+    }
 
 
 
