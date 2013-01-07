@@ -50,5 +50,30 @@ a:hover {
 }
 
 
+.zoom {
+    display: block;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: middle center;
+  -webkit-transform: scale(1);
+  -webkit-animation-name: animation04;
 
+}
+@-webkit-keyframes animation04 {
+  0%{
+    -webkit-transform: scale(1);
+    }
+  70% {
+    -webkit-transform: scale(1);
+
+  }
+  85% {
+    -webkit-transform: scale(1.4);
+
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
 
