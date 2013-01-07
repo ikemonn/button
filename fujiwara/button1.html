@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ボタン</title>
+    <style>
+    
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background: #d6d6d6;
+            text-align: center;
+            padding: 50px 0px;
+            -webkit-transform-style: preserve-3d;
+            -webkit-perspective: 400;
+        }
+    </style>
+<script type="text/javascript">
+<!--
+
+var mouseX;
+var mouseY;
+var stageW = 250;
+var stageH = 100;
+var click_flg = false;
+
+
+            
+var point_x1 = 155;
+var point_x2 = 35;
+var point_y1 = 55;
+var point_y2 = 35;
+
+var line_x1 = 35;
+var line_x2 = 05;
+var line_x3 = 85;
+var line_x4 = 185;
+
+var line_y1 = 85;
+var line_y2 = 35;
+var line_y3 = 05;
+var line_y4 = 55;
+//- - - - -  -- - - - 
+/*
+var frames =[];  
+var frameCount = 0;  
+var width = video.width;  
+var height = video.height;  
+var separate = 15;  
+
+
+
+function scope(){  
+    var saveFrame = document.getElementById('saveFrame').getContext('2d');  
+    saveFrame.drawImage(video,0,0,width,height);  
+    var imageRow =[];  
+  
+    for(var i=0; i< separate; i++){  
+        imageRow.push(saveFrame.getImageData(0,(height/separate)*i,width,(height/separate)*(i+1)));  
+    }  
+frames[frameCount]=imageRow;  
+frameCount = (frameCount+1) % separate;  
+  
+for(var i=0;i< separate;i++){  
+var frame = frames[(frameCount + i) % separate];  
+if (frame && frame[i]){  
+canvas.putImageData(frame[i], 0, (height/separate)*i);  
+}  
+}  
+setTimeout(scope, 1);  
+}  
+*/
+//- - - - -  -- - - - 
+
+
+//ボタンの位置を変数で記憶する
+
+
+
+window.onload = button;
+
+function button() {
+
+	init();
+
+	function init(){
+		draw1();
+		
+		//描画コンテキストの取得
+		var canvas = document.getElementById('sample1');
+		
+		//-------------------------
+		//キャンバスのMouseDown
+		canvas.onmousedown = (function(e) {
+			var rect = e.target.getBoundingClientRect();
+			
+			var mx = e.clientX - rect.left;
+			var my = e.clientY - rect.top;
+			console.log(mx);
+			console.log(my);
+			
+			if(click_flg==false){
+				click_flg = true;
+				draw2();
+			}else {
+				click_flg = false;
+				draw1();
+			}
+		});
+
+		canvas.onmouseover = (function(e) {
+			var rect = e.target.getBoundingClientRect();
+			
+			var mx = e.clientX - rect.left;
+			var my = e.clientY - rect.top;
+			console.log(mx);
+			console.log(my);
+			
+			draw3();
+		});
+
+		canvas.onmouseout = (function (e) {
+			var rect = e.target.getBoundingClientRect();
+			
+			var mx = e.clientX - rect.left;
+			var my = e.clientY - rect.top;
+			console.log(mx);
+			console.log(my);
+			
+			if(click_flg==false){
+				draw1();
+			}else {
+				draw2();
+			}
+		});
+	}
+
+
+	//-----------------------------------------------------------------------
+	function draw1(){
+		//描画コンテキストの取得
+		var canvas = document.getElementById('sample1');
+		if ( ! canvas || ! canvas.getContext ) { return false; }
+		else {
+			var context = canvas.getContext('2d');
+
+			context.save();
+
+			context.clearRect(0, 0, stageW, stageH);
+			context.strokeStyle = 'rgb(00,50,255)'; //枠線の色は青
+			context.fillStyle = 'rgb(00,00,00)';
+
+			context.save();
+
+			//角丸四角形を描く
+			context.beginPath();
+            //右下
+            context.arc(point_x1, point_y1, 30, 0 * Math.PI / 180, 90 * Math.PI / 180, false);
+			context.lineTo(line_x1, line_y1);
+            //左下
+			context.arc(point_x2, point_y1, 30, 90 * Math.PI / 180, 180 * Math.PI / 180, false);
+			context.lineTo(line_x2, line_y2);
+            //左上
+            context.arc(point_x2, point_y2, 30, 180 * Math.PI / 180, 270 * Math.PI / 180, false);
+			context.lineTo(line_x3, line_y3);
+            //右上
+			context.arc(point_x1, point_y2, 30, 270 * Math.PI / 180, 360 * Math.PI / 180, false);
+			context.lineTo(line_x4, line_y4);
+			context.closePath();
+            
+
+
+            
+			context.lineWidth = 3;
+			context.shadowBlur   = 5;
+			context.shadowColor = '#003377';
+			context.shadowOffsetX = 3;
+			context.shadowOffsetY = 3;
+			context.fill();
+			context.stroke();
+
+			//グラデーション
+			var grad  = context.createLinearGradient(0,0, 0,140);
+			//グラデーション終点のオフセットと色をセット
+			grad.addColorStop(0,'rgb(00,200,255)');
+			grad.addColorStop(0.5,'rgb(00,150,255)');
+			grad.addColorStop(1,'rgb(00,100,255)');
+			//グラデーションをfillStyleプロパティにセット
+
+            context.fillStyle = grad;
+			context.fill();
+
+
+			context.restore();
+			context.save();
+            
+			context.fillStyle = 'rgb(255,255,255)';
+            
+			context.beginPath();
+			context.arc(point_x1, point_y1, 30, 0 * Math.PI / 180, 90 * Math.PI / 180, false);
+			context.lineTo(line_x1, line_y1);			
+            context.arc(point_x2, point_y1, 30, 90 * Math.PI / 180, 180 * Math.PI / 180, false);
+			context.lineTo(line_x2, line_y2);
+            context.arc(point_x2, point_y2, 30, 180 * Math.PI / 180, 270 * Math.PI / 180, false);
+			context.lineTo(line_x3, line_y3);            
+			context.arc(point_x1, point_y2, 30, 270 * Math.PI / 180, 360 * Math.PI / 180, false);
+			context.lineTo(line_x4, line_y4);
+			context.closePath();
+          
+			context.lineWidth = 3;
+			context.shadowBlur   = 5;
+			context.shadowColor = '#003377';
+			context.shadowOffsetX = 3;
+			context.shadowOffsetY = 3;
+			context.clip();
+
+			context.scale(1, 0.5);
+			context.fillStyle = 'rgba(255,255,255,0.2)';
+			context.beginPath();
+//			context.arc(85, 75, 130, 0, Math.PI*2, false);
+			context.closePath();
+			context.shadowBlur   = 0;
+			context.shadowColor = '#FFFFFF';
+			context.shadowOffsetX = 0;
+			context.shadowOffsetY = 0;
+			context.fill();
+
+			context.restore();
+			context.save();
+		}
+	}
+
+	//-----------------------------------------------------------------------
+	function draw2(){
+		//描画コンテキストの取得
+		var canvas = document.getElementById('sample1');
+		if ( ! canvas || ! canvas.getContext ) { return false; }
+		else {
+			var context = canvas.getContext('2d');
+
+			context.save();
+
+			context.clearRect(0, 0, stageW, stageH);
+//			context.strokeStyle = 'rgb(255,50,00)'; //枠線の色は赤
+			context.fillStyle = 'rgb(00,00,00)';
+
+			context.save();
+
+            
+			//角丸四角形を描く
+			context.beginPath();
+            //右下
+            context.arc(point_x1, point_y1, 30, 0 * Math.PI / 180, 90 * Math.PI / 180, false);
+			context.lineTo(line_x1, line_y1);
+            //左下
+			context.arc(point_x2, point_y1, 30, 90 * Math.PI / 180, 180 * Math.PI / 180, false);
+			context.lineTo(line_x2, line_y2);
+            //左上
+            context.arc(point_x2, point_y2, 30, 180 * Math.PI / 180, 270 * Math.PI / 180, false);
+			context.lineTo(line_x3, line_y3);
+            //右上
+			context.arc(point_x1, point_y2, 30, 270 * Math.PI / 180, 360 * Math.PI / 180, false);
+			context.lineTo(line_x4, line_y4);
+			context.closePath();
+                   
+
+            context.lineWidth = 3;
+			context.shadowBlur   = 3;
+			context.shadowColor = '#773300';
+			context.shadowOffsetX = 1;
+			context.shadowOffsetY = 1;
+			context.fill();
+			context.stroke();
+
+
+			//グラデーション
+			var grad  = context.createLinearGradient(0,0, 0,140);
+			//グラデーション終点のオフセットと色をセット
+			grad.addColorStop(0,'rgb(00,180,255)');
+			grad.addColorStop(0.5,'rgb(00,130,255)');
+			grad.addColorStop(1,'rgb(00,50,255)');
+			//グラデーションをfillStyleプロパティにセット
+
+/*
+			//グラデーション
+			var grad  = context.createLinearGradient(0,0, 0,140);
+			//グラデーション終点のオフセットと色をセット
+			grad.addColorStop(0,'rgb(255,200,00)');
+			grad.addColorStop(0.5,'rgb(255,150,00)');
+			grad.addColorStop(1,'rgb(255,100,00)');
+			//グラデーションをfillStyleプロパティにセット
+*/
+			context.fillStyle = grad;
+			context.fill();
+
+			context.restore();
+			context.save();
+
+			context.scale(1, 0.5);
+			context.fillStyle = 'rgba(255,255,255,0.2)';
+			context.beginPath();
+//			context.arc(85, 75, 130, 0, Math.PI*2, false);
+			context.closePath();
+			context.shadowBlur   = 0;
+			context.shadowColor = '#8F8F8F';
+			context.shadowOffsetX = 0;
+			context.shadowOffsetY = 0;
+			context.fill();
+
+			context.restore();
+			context.save();
+            
+            draw3();
+		}
+	}
+
+	//-----------------------------------------------------------------------
+	function draw3(){
+		//描画コンテキストの取得
+		var canvas = document.getElementById('sample1');
+		if ( ! canvas || ! canvas.getContext ) { return false; }
+		else {
+			var context = canvas.getContext('2d');
+
+			context.save();
+			context.fillStyle = 'rgba(180,180,180,0.1)';
+
+			context.save();
+
+			//角丸四角形を描く
+			context.beginPath();
+            //右下
+            context.arc(point_x1, point_y1, 30, 0 * Math.PI / 180, 90 * Math.PI / 180, false);
+			context.lineTo(line_x1, line_y1);
+            //左下
+			context.arc(point_x2, point_y1, 30, 90 * Math.PI / 180, 180 * Math.PI / 180, false);
+			context.lineTo(line_x2, line_y2);
+            //左上
+            context.arc(point_x2, point_y2, 30, 180 * Math.PI / 180, 270 * Math.PI / 180, false);
+			context.lineTo(line_x3, line_y3);
+            //右上
+			context.arc(point_x1, point_y2, 30, 270 * Math.PI / 180, 360 * Math.PI / 180, false);
+			context.lineTo(line_x4, line_y4);
+			context.closePath();
+			context.fill();
+            
+		}
+	}
+
+}
+//-->
+</script>
+
+</head>
+<body>
+<canvas id="sample1" width="200" height="100" style="cursor:pointer;">
+ご利用中のブラウザは，canvasに対応しておりません
+</canvas>
+</body>
+</html>
