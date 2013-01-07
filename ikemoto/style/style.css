@@ -1,4 +1,4 @@
-a {
+/*a {
     display: block;
     width: 200px;
     height: 300px;
@@ -6,4 +6,49 @@ a {
 }
 a:hover {
     background: url(../img/tweet.png) no-repeat 0 0;
+}*/
+
+
+#button {
+  /* ボタンの文字 */
+  font: bold 20px "arial black", sans-serif;
+  color: #760;
+  /*リンクの下線を消す*/
+  text-decoration: none;
+
+  /* ボタンのレイアウト */
+  position:relative;
+  top: 180px;
+  left: 120px;
+  float: left;
+  padding: 10px 20px;
+  background-color: #FB0;
+
+  /* ボックスシャドウ */
+  box-shadow: 0 5px 2px #871, 0px 7px 10px #CCC;
+  -webkit-box-shadow: 0 5px 2px #871, 0 7px 10px #CCC;
+  -moz-box-shadow: 0 5px 2px #871, 0 7px 10px #CCC;
+
+  /* 角を丸くする */
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
 }
+
+#button:hover {
+  /* マウスオーバーの状態 */
+  cursor: pointer;
+  background-color: #FD4;
+}
+
+#button:active {
+  /* クリック中の状態 */
+  top: 183px;
+  box-shadow: 0 2px 2px #871, 0 4px 10px #CCC;
+  -webkit-box-shadow: 0 2px 2px #871, 0 4px 10px #CCC;
+  -moz-box-shadow: 0 2px 2px #871, 0 4px 10px #CCC;
+}
+
+
+
+
