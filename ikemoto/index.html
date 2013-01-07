@@ -6,56 +6,51 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-
-
-
-    <!-- <canvas id="my_canvas" width="200" height="200" style="background-color: green"> -->
-     <script>
-    // window.onload = function()
-    // {
-    //     twitterImageAppear();
-    // }
-
-    // function twitterImageAppear()
-    // {
-    //     //twitterのロゴ画像表示
-    //     var myCanvas = document.getElementById("my_canvas");
-    //     var context = myCanvas.getContext("2d");
-    //     var twitterImage = new Image();
-    //     twitterImage.src = "img/twitter.png";
-    //     twitterImage.onload = function()
-    //     {
-    //         context.drawImage(twitterImage, 0, 0);
-    //     }
-    //     //クリックでリンク先に飛ぶ
-    //     myCanvas.addEventListener("mousedown", clickJumpLink, false);
-    // }
-
-    // function clickJumpLink(e)
-    // {
-    //     //Canvas上のオブジェクトを消す
-    //     var myCanvas = document.getElementById("my_canvas");
-    //     var context = myCanvas.getContext("2d");
-    //     context.clearRect(0, 0, 200, 200);
-    //     //Tweetという文字を表示
-    //     context.font = "italic bold 2em Times New Roman";
-    //     context.fillStyle = "white";
-    //     context.fillText("Tweet!", 10, 100);
-
-    //     //setTimeoutを使って３秒後にイベントおこす
-    //     //文字を表示させる関数わける
-    //     setTimeout(func, delay[, lang])
-    //     location.href = "http://google.com";
-
-
-    // }
-
-
-
-     </script>
+    <!--文字が落ちていく-->
+    <p>ざぼたんは、「押して楽しいボタンを作る」というコンセプトでボタンをひたすら作るサイトです。</p>
+    <p>思わず押したくなるようなボタンがあればクリック！</p>
+    <!--♡の描かれたボタン-->
     <a class="button"><span class="zoom">♡</span></a>
+    <!--PUSHの描かれたボタン-->
     <a class="button" id="button_2"><span id="span_all"><span class="letter01">P</span><span class="letter02">u</span><span class="letter03">s</span><span class="letter04">h</span></span></a>
+    <!--ハート型のボタン-->
     <a id="heart" class="zoom"></a>
 
+
+
+    <script>
+    var pushBtn = document.getElementById('button_2');
+    var shakeFlag = false;
+    pushBtn.addEventListener('click', function(){
+        shakeFlag = true;
+        var elements = document.getElementsByTagName('p');
+        for(var i=0; i<elements.length; i++) {
+            var element = elements.item(i);
+            if (shakeFlag === true) {
+                element.className = 'hoge';
+            } else {
+                element.className = '';
+            }
+            console.log(element);
+        }
+    }, false);
+
+
+      /*
+      element.style.backgroundColor = 'red';
+      element.style.position = 'relative';
+      element.style.top = '300px';
+      document.body.appendChild(element);
+      */
+      //var objBody = document.getElementsByTagName("body").item(0);
+      //objBody.appendChild(element);
+
+    // var haruki = document.getElementsByTagName('hoge');
+    // haruki.style.position = 'relative';
+    // haruki.style.left = '100px';
+    // haruki.style.top = '300px';
+
+    // document.body.appendChild(haruki);
+    </script>
 </body>
 </html>
