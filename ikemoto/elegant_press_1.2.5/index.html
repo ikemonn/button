@@ -6,6 +6,18 @@
 <!--[if IE]><style>#header h1 a:hover{font-size:75px;}</style><![endif]-->
 </head>
 <body>
+<div id="fb-root"></div>
+<!--FBのいいね！ぼたん設置用　URL貼り付ける-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=303072046461274";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 <div class="main-container">
   <header>
     <h1><a href="index.html">ざぼたん</a></h1>
@@ -88,21 +100,16 @@
     <article class="footbox last">
       <h2>We Are Social!</h2>
       <div id="social">
-          <a href="http://twitter.com/priteshgupta" class="s3d twitter"> Twitter <span class="icons twitter"></span> </a>
-          <a href="http://www.facebook.com/priteshgupta" class="s3d facebook"> Facebook <span class="icons facebook"></span> </a>
-          <a href="http://forrst.com/people/priteshgupta" class="s3d forrst"> Forrst <span class="icons forrst"></span> </a>
-          <a href="http://www.flickr.com/photos/priteshgupta" class="s3d flickr"> Flickr <span class="icons flickr"></span> </a>
-          <a href="#" class="s3d designmoo"> Designmoo <span class="icons designmoo"></span> </a>
+        <!--Twitterボタン用-->
+          <a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-size="large">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <!--いいね！ボタン用-->
+          <div class="fb-like" data-href="http://hoge.com" data-send="false" data-width="450" data-show-faces="true"></div>
       </div>
     </article>
   <article class="latestgallery">
-      <h2>Latest Work</h2>
-      <ul>
-		<li><a href="images/thumb.jpg" data-gal="prettyPhoto[gallery]" title="Title"><img src="images/thumb.jpg" alt="" width="150" height="95" /></a></li>
-        <li><a href="images/thumb2.jpg" data-gal="prettyPhoto[gallery]" title="Title"><img src="images/thumb2.jpg" alt=""  width="150" height="95" /></a></li>
-        <li><a href="images/thumb3.jpg" data-gal="prettyPhoto[gallery]" title="Title"><img src="images/thumb3.jpg" alt=""  width="150" height="95" /></a></li>
-        <li><a href="images/thumb4.jpg" data-gal="prettyPhoto[gallery]" title="Title"><img src="images/thumb4.jpg" alt=""  width="150" height="95" /></a></li>
-      </ul>
+      <h2>なんか書くなら</h2>
+
     </article>
 
             <div class="clear"></div>
