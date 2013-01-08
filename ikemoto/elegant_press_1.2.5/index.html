@@ -2,6 +2,7 @@
 <title>ざぼたん | Home</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="styles/elegant-press.css" type="text/css" />
+<link rel="stylesheet" href="styles/ikemoto_style.css">
 <script src="scripts/elegant-press.js" type="text/javascript"></script>
 <!--[if IE]><style>#header h1 a:hover{font-size:75px;}</style><![endif]-->
 </head>
@@ -49,21 +50,24 @@
       <ul>
         <li>
           <div class="imgholder">
-            <div class="inputBtn" style="width:275px; height:145px; background-color:yellow;"></div>
+            <!--小さい♡ボタン-->
+            <div class="inputBtn" style="width:275px; height:145px;"><a class="button" id="little_heart"><span class="zoom">♡</span></a></div>
           </div>
           <h4>ボタンのタイトル？</h4>
           <p>なんか文章書きたかったらここ</p>
         </li>
         <li>
+          <!--バルスボタン-->
           <div class="imgholder">
-            <div class="inputBtn" style="width:275px; height:145px; background-color:yellow;"></div>
+            <div class="inputBtn" style="width:275px; height:145px;"><a class="button" id="button_2">バルス!</a></div>
           </div>
           <h4>ボタンのタイトル？</h4>
           <p>なんか文章書きたかったらここ</p>
         </li>
         <li class="last">
           <div class="imgholder">
-            <div class="inputBtn" style="width:275px; height:145px; background-color:yellow;"></div>
+            <!--ハート型のボタン-->
+            <div class="inputBtn" style="width:275px; height:145px; background-color:;"><a id="heart" class="zoom"></a></div>
           </div>
           <h4>ボタンのタイトル？</h4>
           <p>なんか文章書きたかったらここ</p>
@@ -126,6 +130,25 @@
 
 <br />
 <br />
+
+<!--バルスボタンのJS-->
+<script>
+    var pushBtn = document.getElementById('button_2');
+    var shakeFlag = false;
+    pushBtn.addEventListener('click', function(){
+        shakeFlag = true;
+        var elements = document.getElementsByTagName('h1');
+        for(var i=0; i<elements.length; i++) {
+            var element = elements.item(i);
+            if (shakeFlag === true) {
+                element.className = 'hoge';
+            } else {
+                element.className = '';
+            }
+            console.log(element);
+        }
+    }, false);
+</script>
 
     </body>
 </html>

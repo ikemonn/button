@@ -1,0 +1,251 @@
+/*a {
+    display: block;
+    width: 200px;
+    height: 300px;
+    background: url(../img/twitter.png) no-repeat 0 0;
+}
+a:hover {
+    background: url(../img/tweet.png) no-repeat 0 0;
+}*/
+
+.button {
+  /* ボタンの文字 */
+  font: bold 20px "arial black", sans-serif;
+  color: #760;
+  height: 300px
+  /*リンクの下線を消す*/
+  text-decoration: none;
+
+  /* ボタンのレイアウト */
+  position:relative;
+  top: 40px;
+  /*left: 110px;*/
+  float: left;
+  padding: 10px 20px;
+  background-color: #FB0;
+
+  /* ボックスシャドウ */
+  box-shadow: 0 5px 2px #871, 0px 7px 10px #CCC;
+  -webkit-box-shadow: 0 5px 2px #871, 0 7px 10px #CCC;
+  -moz-box-shadow: 0 5px 2px #871, 0 7px 10px #CCC;
+
+  /* 角を丸くする */
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+}
+
+.button:hover {
+  /* マウスオーバーの状態 */
+  cursor: pointer;
+  background-color: #FD4;
+}
+
+.button:active {
+  /* クリック中の状態 */
+  top: 43px;
+  box-shadow: 0 2px 2px #871, 0 4px 10px #CCC;
+  -webkit-box-shadow: 0 2px 2px #871, 0 4px 10px #CCC;
+  -moz-box-shadow: 0 2px 2px #871, 0 4px 10px #CCC;
+}
+
+#little_heart {
+  left :110px;
+}
+
+#button_2 {
+  left:85px;
+}
+
+.zoom {
+    display: block;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: middle center;
+  -webkit-transform: scale(1);
+  -webkit-animation-name: animation04;
+
+}
+@-webkit-keyframes animation04 {
+  0%{
+    -webkit-transform: scale(1);
+    }
+  70% {
+    -webkit-transform: scale(1);
+
+  }
+  85% {
+    -webkit-transform: scale(1.4);
+
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+#button_2 {
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#span_all{
+    display: inline-block;
+  -webkit-transform-origin: middle center;
+  -webkit-animation-name: letterAnimation2;
+  position: relative;
+  top: 0px;
+}
+
+.letter02{
+  -webkit-animation-delay: 0.2s;
+}
+
+.letter03{
+  -webkit-animation-delay: 0.4s;
+}
+
+.letter04{
+  -webkit-animation-delay: 0.6s;
+}
+
+@-webkit-keyframes letterAnimation2 {
+  0%{
+      top: 0px;
+    }
+  70% {
+      top: 0;
+
+  }
+  85% {
+      top: -7px;
+
+  }
+  100% {
+      top: 0;
+  }
+}
+
+#heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    top: 40px;
+    left: 85px;
+}
+#heart:before,
+#heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: red;
+    /*-moz-border-radius: 50px 50px 0 0;*/
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+         -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+
+#heart:after {
+    left: 0;
+    background: red;
+    -webkit-box-shadow: 7px 0px 0px #501;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+       -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+         -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+}
+
+#heart:hover {
+  /* マウスオーバーの状態 */
+  cursor: pointer;
+}
+
+#heart:active:after
+ {
+  /* クリック中の状態 */
+  top: 3px;
+  -webkit-box-shadow: 4px 0px 0px #501;
+}
+
+#heart:active:before {
+    top: 3px;
+}
+
+.hoge {
+    position: relative;
+    -webkit-transform-origin: center -20px 0;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-name: shake;
+ /*   -webkit-animation-delay: 0.5s;
+    -webkit-animation-name: drop;*/
+
+}
+@-webkit-keyframes shake {
+  0%{
+    top : 0px;
+      -webkit-transform: rotate(0);
+  }
+  10%{
+    /*left:0px;*/
+    top : 0px;
+      -webkit-transform: rotate(1deg);
+  }
+  20%{
+    /*left:0px;*/
+    top : 0px;
+      -webkit-transform: rotate(0deg);
+  }
+  30%{
+    /*left:0px;*/
+    -webkit-transform: rotate(-1deg);
+  }
+  40%{
+    /*left:0px;*/
+    top : 0px;
+      -webkit-transform: rotate(1deg);
+  }
+  50%{
+    /*left:0px;*/
+    top : 0px;
+      -webkit-transform: rotate(0deg);
+  }
+  60%{
+    /*left:0px;*/
+    -webkit-transform: rotate(-1deg);
+  }
+  100%{
+    /*left:0px;*/
+      top : 500px;
+  }
+}
+
+@-webkit-keyframes drop {
+  0%{
+      top : 0px;
+  }
+  100%{
+    /*left:0px;*/
+      top : 1000px;
+  }
+
+}
