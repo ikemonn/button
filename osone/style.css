@@ -1,0 +1,50 @@
+@keyframes left-to-right {
+    from {
+        left: 0;
+    }
+    to {
+        left: 570px;
+    }
+}
+
+body {
+    margin: 0 auto;
+    text-align: center;
+}
+
+button {
+    position: fixed;
+    border: 1px blue solid;
+    left: 250px;
+    top: 275px;
+    height: 50px;
+    opacity: 0.8;
+    width: 100px;
+    z-index: 100;
+}
+
+#cvs {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    z-index: 1;
+}
+
+.red {
+    background-color:rgba(100, 100, 255, 0.2);
+    border-radius: 9px;
+    color: blue;
+    font-size: 20px;
+    text-decoration:none;
+    -webkit-transition:all 1.0s ease-in-out;
+}
+
+.red:hover {
+    background-color:rgba(100, 100, 255, 0.5);
+    border: 1px white solid;
+}
+
+.red:active {
+    background-color:rgba(100, 100, 255, 0.0);
+    border: 1px white solid;
+}
